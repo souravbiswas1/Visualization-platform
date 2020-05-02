@@ -1,0 +1,840 @@
+{
+	"info": {
+		"_postman_id": "8000fa8f-d00b-45a7-bef1-19459f5747ec",
+		"name": "Platform-Visualization",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Upload-file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "source",
+							"type": "file",
+							"src": "/C:/Users/admin/Documents/Sourav/Code/Visualization/visualization-initial/file_storage/visualization_data.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getUploadfile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getUploadfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Columns-type",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "dataset",
+							"value": "visualization_data.csv",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getColType",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getColType"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Univariate-analysis-Num",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "method",
+							"value": "numeric univariate",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "univar_num",
+							"value": "2Year",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "bin_range",
+							"value": "0.1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "dataset",
+							"value": "visualization_data.csv",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getUnivar?method=numeric univariate&dataset=visualization_data.csv&univar_num=2Year&bin_range=0.1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getUnivar"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "numeric univariate"
+						},
+						{
+							"key": "dataset",
+							"value": "visualization_data.csv"
+						},
+						{
+							"key": "univar_num",
+							"value": "2Year"
+						},
+						{
+							"key": "bin_range",
+							"value": "0.1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Univariate-analysis-Cat",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "method",
+							"value": "categorical univariate",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "dataset",
+							"value": "visualization_data.csv",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "univar_cat",
+							"value": "SUBSECTOR",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getUnivar?method=categorical univariate&dataset=visualization_data.csv&univar_cat=FoundedYear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getUnivar"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "categorical univariate"
+						},
+						{
+							"key": "dataset",
+							"value": "visualization_data.csv"
+						},
+						{
+							"key": "univar_cat",
+							"value": "FoundedYear"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bivariate-analysis-Cat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getBivar?cat1=SECTOR&cat2=SUBSECTOR&dataset=visualization_data.csv&method=categorical bivariate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getBivar"
+					],
+					"query": [
+						{
+							"key": "cat1",
+							"value": "SECTOR"
+						},
+						{
+							"key": "cat2",
+							"value": "SUBSECTOR"
+						},
+						{
+							"key": "dataset",
+							"value": "visualization_data.csv"
+						},
+						{
+							"key": "method",
+							"value": "categorical bivariate"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bivariate-analysis-Num",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getBivar?num1=1year&num2=CapitalRaised&dataset=visualization_data.csv&method=numeric bivariate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getBivar"
+					],
+					"query": [
+						{
+							"key": "num1",
+							"value": "1year"
+						},
+						{
+							"key": "num2",
+							"value": "CapitalRaised"
+						},
+						{
+							"key": "dataset",
+							"value": "visualization_data.csv"
+						},
+						{
+							"key": "method",
+							"value": "numeric bivariate"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bivariate-analysis-Cat-Num-Sum",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getBivar?cat=SECTOR&num=6months,1year&dataset=visualization_data.csv&method=bivariate sum",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getBivar"
+					],
+					"query": [
+						{
+							"key": "cat",
+							"value": "SECTOR"
+						},
+						{
+							"key": "num",
+							"value": "6months,1year"
+						},
+						{
+							"key": "dataset",
+							"value": "visualization_data.csv"
+						},
+						{
+							"key": "method",
+							"value": "bivariate sum"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bivariate-analysis-Cat-Num-Mean",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getBivar?cat=SUBSECTOR&num=6months,1year&dataset=visualization_data.csv&method=bivariate mean",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getBivar"
+					],
+					"query": [
+						{
+							"key": "cat",
+							"value": "SUBSECTOR"
+						},
+						{
+							"key": "num",
+							"value": "6months,1year"
+						},
+						{
+							"key": "dataset",
+							"value": "visualization_data.csv"
+						},
+						{
+							"key": "method",
+							"value": "bivariate mean"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bivariate-analysis-Cat-Num-Sum-Mean",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getBivar?cat=SECTOR&num=6months,1year&dataset=visualization_data.csv&method=bivariate sum mean",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getBivar"
+					],
+					"query": [
+						{
+							"key": "cat",
+							"value": "SECTOR"
+						},
+						{
+							"key": "num",
+							"value": "6months,1year"
+						},
+						{
+							"key": "dataset",
+							"value": "visualization_data.csv"
+						},
+						{
+							"key": "method",
+							"value": "bivariate sum mean"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Multivariate-analysis-Cat-Num-Sum",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getBivar?cat=SECTOR&num=6months,1year&dataset=visualization_data.csv&method=bivariate sum",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getBivar"
+					],
+					"query": [
+						{
+							"key": "cat",
+							"value": "SECTOR"
+						},
+						{
+							"key": "num",
+							"value": "6months,1year"
+						},
+						{
+							"key": "dataset",
+							"value": "visualization_data.csv"
+						},
+						{
+							"key": "method",
+							"value": "bivariate sum"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Multivariate-analysis-Cat-Num-Mean",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getBivar?cat=SUBSECTOR&num=6months,1year&dataset=visualization_data.csv&method=bivariate mean",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getBivar"
+					],
+					"query": [
+						{
+							"key": "cat",
+							"value": "SUBSECTOR"
+						},
+						{
+							"key": "num",
+							"value": "6months,1year"
+						},
+						{
+							"key": "dataset",
+							"value": "visualization_data.csv"
+						},
+						{
+							"key": "method",
+							"value": "bivariate mean"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Multivariate-analysis-Cat-Num-Sum-Mean",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getBivar?cat=Industry&num=6months,1year,2Year&dataset=visualization_data.csv&method=bivariate sum mean",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getBivar"
+					],
+					"query": [
+						{
+							"key": "cat",
+							"value": "Industry"
+						},
+						{
+							"key": "num",
+							"value": "6months,1year,2Year"
+						},
+						{
+							"key": "dataset",
+							"value": "visualization_data.csv"
+						},
+						{
+							"key": "method",
+							"value": "bivariate sum mean"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Multivariate-analysis-Cat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "method",
+							"value": "categorical multivariate",
+							"type": "text"
+						},
+						{
+							"key": "dataset",
+							"value": "visualization_data.csv",
+							"type": "text"
+						},
+						{
+							"key": "columns",
+							"value": "SECTOR,SUBSECTOR",
+							"type": "text"
+						},
+						{
+							"key": "groupby",
+							"value": "State",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getMultivar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getMultivar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Histogram-analysis-Num",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "method",
+							"value": "num all multivariate",
+							"type": "text"
+						},
+						{
+							"key": "dataset",
+							"value": "loan_data.csv",
+							"type": "text"
+						},
+						{
+							"key": "numcol",
+							"value": "loan_amnt,annual_inc,int_rate",
+							"type": "text"
+						},
+						{
+							"key": "histogram_bin",
+							"value": "10",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getMultivar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getMultivar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Frequency Distribution-analysis-Cat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "method",
+							"value": "cat all multivariate",
+							"type": "text"
+						},
+						{
+							"key": "dataset",
+							"value": "loan_data.csv",
+							"type": "text"
+						},
+						{
+							"key": "catcol",
+							"value": "grade,sub_grade,term",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getMultivar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getMultivar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Multivariate-analysis-Num",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "method",
+							"value": "numerical multivariate",
+							"type": "text"
+						},
+						{
+							"key": "dataset",
+							"value": "visualization_data.csv",
+							"type": "text"
+						},
+						{
+							"key": "columns",
+							"value": "6months,1year,2Year,FTE,CapitalRaised",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getMultivar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getMultivar"
+					],
+					"query": [
+						{
+							"key": "num1",
+							"value": "FTE",
+							"disabled": true
+						},
+						{
+							"key": "num2",
+							"value": "CapitalRaised",
+							"disabled": true
+						},
+						{
+							"key": "dataset",
+							"value": "visualization_data.csv",
+							"disabled": true
+						},
+						{
+							"key": "method",
+							"value": "numeric bivariate",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Correlation-analysis-All",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "method",
+							"value": "all",
+							"type": "text"
+						},
+						{
+							"key": "dataset",
+							"value": "loan_data.csv",
+							"type": "text"
+						},
+						{
+							"key": "columns",
+							"value": "loan_amnt,funded_amnt,funded_amnt_inv,int_rate,installment,annual_inc,dti,delinq_2yrs,earliest_cr_line,inq_last_6mths,mths_since_last_delinq,mths_since_last_record,open_acc,pub_rec,revol_bal,revol_util,total_acc,out_prncp,out_prncp_inv,total_pymnt,total_pymnt_inv,total_rec_prncp,total_rec_int,total_rec_late_fee,last_pymnt_d,last_pymnt_amnt,next_pymnt_d,last_credit_pull_d,collections_12_mths_ex_med,mths_since_last_major_derog,annual_inc_joint,dti_joint,tot_coll_amt,tot_cur_bal,open_acc_6m,open_act_il,open_il_12m,open_il_24m,mths_since_rcnt_il,total_bal_il,il_util,open_rv_12m,open_rv_24m,max_bal_bc,all_util,total_rev_hi_lim,inq_fi,total_cu_tl,inq_last_12m,acc_open_past_24mths,avg_cur_bal,bc_open_to_buy,bc_util,chargeoff_within_12_mths,mo_sin_old_il_acct,mo_sin_old_rev_tl_op,mo_sin_rcnt_rev_tl_op,mo_sin_rcnt_tl,mort_acc,mths_since_recent_bc,mths_since_recent_bc_dlq,mths_since_recent_inq,mths_since_recent_revol_delinq,num_accts_ever_120_pd,num_actv_bc_tl,num_actv_rev_tl,num_bc_sats,num_bc_tl,num_il_tl,num_op_rev_tl,num_rev_accts,num_rev_tl_bal_gt_0,num_sats,num_tl_90g_dpd_24m,num_tl_op_past_12m,pct_tl_nvr_dlq,percent_bc_gt_75,pub_rec_bankruptcies,tot_hi_cred_lim,total_bal_ex_mort,total_bc_limit,total_il_high_credit_limit,revol_bal_joint,sec_app_earliest_cr_line,sec_app_inq_last_6mths,sec_app_mort_acc,sec_app_open_acc,sec_app_revol_util,sec_app_open_act_il,sec_app_num_rev_accts,sec_app_chargeoff_within_12_mths,sec_app_collections_12_mths_ex_med,sec_app_mths_since_last_major_derog",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getCorrelation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getCorrelation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Correlation-analysis-Filter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "method",
+							"value": "filter",
+							"type": "text"
+						},
+						{
+							"key": "dataset",
+							"value": "loan_data.csv",
+							"type": "text"
+						},
+						{
+							"key": "columns",
+							"value": "loan_amnt,funded_amnt,funded_amnt_inv,int_rate,installment,annual_inc,dti,delinq_2yrs,earliest_cr_line,inq_last_6mths,mths_since_last_delinq,mths_since_last_record,open_acc,pub_rec,revol_bal,revol_util,total_acc,out_prncp,out_prncp_inv,total_pymnt,total_pymnt_inv,total_rec_prncp,total_rec_int,total_rec_late_fee,last_pymnt_d,last_pymnt_amnt,next_pymnt_d,last_credit_pull_d,collections_12_mths_ex_med,mths_since_last_major_derog,annual_inc_joint,dti_joint,tot_coll_amt,tot_cur_bal,open_acc_6m,open_act_il,open_il_12m,open_il_24m,mths_since_rcnt_il,total_bal_il,il_util,open_rv_12m,open_rv_24m,max_bal_bc,all_util,total_rev_hi_lim,inq_fi,total_cu_tl,inq_last_12m,acc_open_past_24mths,avg_cur_bal,bc_open_to_buy,bc_util,chargeoff_within_12_mths,mo_sin_old_il_acct,mo_sin_old_rev_tl_op,mo_sin_rcnt_rev_tl_op,mo_sin_rcnt_tl,mort_acc,mths_since_recent_bc,mths_since_recent_bc_dlq,mths_since_recent_inq,mths_since_recent_revol_delinq,num_accts_ever_120_pd,num_actv_bc_tl,num_actv_rev_tl,num_bc_sats,num_bc_tl,num_il_tl,num_op_rev_tl,num_rev_accts,num_rev_tl_bal_gt_0,num_sats,num_tl_90g_dpd_24m,num_tl_op_past_12m,pct_tl_nvr_dlq,percent_bc_gt_75,pub_rec_bankruptcies,tot_hi_cred_lim,total_bal_ex_mort,total_bc_limit,total_il_high_credit_limit,revol_bal_joint,sec_app_earliest_cr_line,sec_app_inq_last_6mths,sec_app_mort_acc,sec_app_open_acc,sec_app_revol_util,sec_app_open_act_il,sec_app_num_rev_accts,sec_app_chargeoff_within_12_mths,sec_app_collections_12_mths_ex_med,sec_app_mths_since_last_major_derog",
+							"type": "text"
+						},
+						{
+							"key": "range1",
+							"value": "-0.8",
+							"type": "text"
+						},
+						{
+							"key": "range2",
+							"value": "-0.1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getCorrelation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getCorrelation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Descriptive-Stats",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getDescriptive?filename=visualization_data.csv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getDescriptive"
+					],
+					"query": [
+						{
+							"key": "filename",
+							"value": "visualization_data.csv"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
