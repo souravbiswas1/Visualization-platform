@@ -9,7 +9,7 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework.routers import SimpleRouter
 
-from . import univariate,columns_type,bivariate,multivariate,correlation,file_upload,descriptive_stat
+from . import univariate,columns_type,bivariate,multivariate,correlation,file_upload,descriptive_stat_Func,descriptive_stat_Class
 
 
 schema_view = get_schema_view(
@@ -31,5 +31,6 @@ urlpatterns = [
     path('getMultivar', multivariate.getMultivar),
     path('getCorrelation', correlation.getCorrelation),
     path('getUploadfile', file_upload.getUploadfile),
-    path('getDescriptive', descriptive_stat.getDescriptive),
+    path('getDescriptive', descriptive_stat_Func.getDescriptive),
+    path('getDescriptive', descriptive_stat_Class.getDescriptive),
 ]

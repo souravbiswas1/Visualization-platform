@@ -7,24 +7,20 @@ from rest_framework.response import Response
 from rest_framework import status
 import pickle
 import shutil, os
-# from api.config import file_path
-# path = file_path()
 from django.conf import settings
-MEDIA_FOLDER_PATH = settings.MEDIA_ROOT + '/'
+MEDIA_FOLDER_PATH = settings.MEDIA_ROOT + '\\'
 
 
 @api_view(['POST'])
 def getUploadfile(request):
-	def upload_file():
-		file_name = request.FILES['source']
-		# upload file
-		# print(file_name)
+	def upload_file(file_name):
 		fs = FileSystemStorage()
 		# save file data
 		filename = fs.save(file_name.name, file_name)
 		# get the path of file storage
-		if os.path.exists(MEDIA_FOLDER_PATH + file_name.name):
-			return {"filename": file_name.name}
+		filepath = MEDIA_FOLDER_PATH + file_name.name
+		if os.path.exists(filepath):
+			return {"file_name": filename}
 		else :
 			return {"errors":"failed to save the file"}
 
@@ -32,7 +28,7 @@ def getUploadfile(request):
 
 	if request.method == "POST":
 		try:
-			resp = upload_file()
+			resp = upload_file(request.FILES['source'])
 			return Response(resp)
 		except Exception as e:
 			print(e)

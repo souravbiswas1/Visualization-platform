@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "8000fa8f-d00b-45a7-bef1-19459f5747ec",
+		"_postman_id": "b6f5e7ab-7657-4762-a2fe-d49da3fd1553",
 		"name": "Platform-Visualization",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -8,6 +8,9 @@
 		{
 			"name": "Upload-file",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -16,7 +19,7 @@
 						{
 							"key": "source",
 							"type": "file",
-							"src": "/C:/Users/admin/Documents/Sourav/Code/Visualization/visualization-initial/file_storage/visualization_data.csv"
+							"src": "/C:/Users/1029823/Music/RG-PE-5.csv"
 						}
 					]
 				},
@@ -49,7 +52,7 @@
 					"formdata": [
 						{
 							"key": "dataset",
-							"value": "visualization_data.csv",
+							"value": "RG-PE-5.csv",
 							"type": "text"
 						}
 					]
@@ -108,7 +111,7 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8000/visualization/v1/getUnivar?method=numeric univariate&dataset=visualization_data.csv&univar_num=2Year&bin_range=0.1",
+					"raw": "http://localhost:8000/visualization/v1/getUnivar?method=numeric univariate&dataset=RG-PE-5.csv&univar_num=FTE&bin_range=10",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -126,15 +129,15 @@
 						},
 						{
 							"key": "dataset",
-							"value": "visualization_data.csv"
+							"value": "RG-PE-5.csv"
 						},
 						{
 							"key": "univar_num",
-							"value": "2Year"
+							"value": "FTE"
 						},
 						{
 							"key": "bin_range",
-							"value": "0.1"
+							"value": "10"
 						}
 					]
 				}
@@ -806,7 +809,7 @@
 			"response": []
 		},
 		{
-			"name": "Descriptive-Stats",
+			"name": "Descriptive-Stats-Func",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -814,7 +817,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/visualization/v1/getDescriptive?filename=visualization_data.csv",
+					"raw": "http://localhost:8000/visualization/v1/getDescriptive?filename=RG-PE-5.csv",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -828,13 +831,42 @@
 					"query": [
 						{
 							"key": "filename",
-							"value": "visualization_data.csv"
+							"value": "RG-PE-5.csv"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Descriptive-Stats Class",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/visualization/v1/getDescriptive?filename=RG-PE-5.csv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualization",
+						"v1",
+						"getDescriptive"
+					],
+					"query": [
+						{
+							"key": "filename",
+							"value": "RG-PE-5.csv"
 						}
 					]
 				}
 			},
 			"response": []
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

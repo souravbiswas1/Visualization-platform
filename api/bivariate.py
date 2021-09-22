@@ -14,7 +14,6 @@ import pickle
 from django.conf import settings
 MEDIA_FOLDER_PATH = settings.MEDIA_ROOT + '/'
 
-
 @api_view(['GET'])
 def getBivar(request):
 	def bivar_analysis_cat(x,y,z):
